@@ -19,4 +19,4 @@
 
 ## 文档更新
 
-文档源文件、产品目录和网站部署配置都在本仓库中。修改通过 Pull Request 审核；合并到 `main` 后自动构建并发布到 GitHub Pages。
+本仓库负责维护文档源文件和产品目录。Pull Request 会运行严格构建检查；合并到 `main` 后，公开的官网仓库会读取本仓库并发布到 `https://zerothrobot.github.io/docs/`。官网仓库每小时同步一次，也可通过配置 `DOCS_PUBLISH_TOKEN` 在文档更新后立即触发发布。
