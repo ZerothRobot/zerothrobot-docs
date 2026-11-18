@@ -1,4 +1,4 @@
-name: Build and deploy documentation
+name: Validate and publish documentation
 
 on:
   pull_request:
@@ -10,7 +10,7 @@ permissions:
   contents: read
 
 concurrency:
-  group: docs-pages
+  group: docs-build
   cancel-in-progress: true
 
 jobs:
@@ -25,6 +25,7 @@ jobs:
         with:
           python-version: "3.13"
           cache: pip
+          cache-dependency-path: requirements.txt
 
       - name: Install dependencies
         run: python -m pip install -r requirements.txt
@@ -32,26 +33,22 @@ jobs:
       - name: Build site and validate links
         run: mkdocs build --strict
 
-      - name: Upload Pages artifact
-        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-        uses: actions/upload-pages-artifact@v4
-        with:
-          path: site
-
-  deploy:
+  publish:
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     needs: build
     runs-on: ubuntu-latest
-    permissions:
-      pages: write
-      id-token: write
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - name: Configure GitHub Pages
-        uses: actions/configure-pages@v6
+      - name: Trigger website repository deployment when a token is configured
+        env:
+          DOCS_PUBLISH_TOKEN: ${{ secrets.DOCS_PUBLISH_TOKEN }}
+        run: |
+          if [ -z "$DOCS_PUBLISH_TOKEN" ]; then
+            echo "DOCS_PUBLISH_TOKEN is not configured. The website repository will pick up this update on its hourly schedule."
+            exit 0
+          fi
 
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v5
+          GH_TOKEN="$DOCS_PUBLISH_TOKEN" gh api repos/ZerothRobot/ZerothRobot.github.io/dispatches \
+            --method POST \
+            --field event_type=docs-updated \
+            --field client_payload[ref]=main \
+            --field client_payload[sha]="$GITHUB_SHA"
