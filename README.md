@@ -33,12 +33,8 @@ mkdocs build --strict
 
 ## GitHub Pages 发布
 
-目标地址是 `https://zerothrobot.github.io/docs/`。为使用 GitHub Pages 项目站点的默认路径，GitHub 上的文档仓库必须命名为 `docs`（本地工作目录仍可命名为 `zerothrobot-docs`）。将仓库 Pages 发布源设置为 **GitHub Actions**：Pull Request 自动构建和检查；合并到 `main` 后自动发布。
+文档源码仓库为 [`ZerothRobot/zerothrobot-docs`](https://github.com/ZerothRobot/zerothrobot-docs)，目标阅读地址是 `https://zerothrobot.github.io/docs/`。品牌官网仓库 `ZerothRobot.github.io` 负责发布根站点和 `/docs/` 路径，本文档仓库独立维护源码并负责严格构建检查。
 
-本地 `origin` 指向 `https://github.com/ZerothRobot/docs.git`。创建该远程仓库后，首次推送 `main`：
+当前仓库的 GitHub Actions 会在 Pull Request 和 `main` 更新时运行 `mkdocs build --strict`。GitHub Pages 项目站点由仓库名决定，直接从本仓库部署将使用 `/zerothrobot-docs/` 路径。若要从本仓库自动更新官网仓库中的 `/docs/` 发布内容，需要在官网仓库配置接收文档更新的部署流程，并在本仓库配置有权限触发该流程的凭据。
 
-```bash
-git push -u origin main
-```
-
-然后在仓库 **Settings → Pages → Build and deployment** 中将 Source 设为 **GitHub Actions**。部署工作流无需额外 PAT 或跨仓库写权限。
+本地预览运行 `mkdocs serve`，默认入口为 `http://127.0.0.1:8000/docs/`。

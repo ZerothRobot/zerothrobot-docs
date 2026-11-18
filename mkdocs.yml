@@ -1,8 +1,8 @@
 site_name: ZerothRobot 文档中心
 site_description: ZerothRobot 产品、使用与开发文档
 site_url: https://zerothrobot.github.io/docs/
-repo_url: https://github.com/ZerothRobot/docs
-repo_name: ZerothRobot/docs
+repo_url: https://github.com/ZerothRobot/zerothrobot-docs
+repo_name: ZerothRobot/zerothrobot-docs
 edit_uri: edit/main/docs/
 
 theme:
