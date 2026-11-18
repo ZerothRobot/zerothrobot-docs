@@ -1,0 +1,12 @@
+# 产品总览
+
+产品资料按型号分区维护。进入具体产品页面后，可查看该产品的资料状态和部门维护入口。
+
+| 产品 | 入口 | 内容范围 |
+| :--- | :--- | :--- |
+| M1 | [M1](m1/index.md) | 产品概览、版本兼容、快速开始、操作、维护和排障 |
+| Bridge | [Bridge](bridge/index.md) | 产品概览、版本兼容、快速开始、操作、维护和排障 |
+| Roborigo | [Roborigo](roborigo/index.md) | 产品概览、版本兼容、快速开始、操作、维护和排障 |
+| Joyin Arm | [Joyin Arm](joyin-arm/index.md) | 产品概览，以及机械臂部门现有教程 |
+
+新增产品时，按[新增产品分类指南](../contributing/new-product.md)建立目录并登记导航。
