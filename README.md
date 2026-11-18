@@ -21,7 +21,7 @@ python -m pip install -r requirements.txt
 mkdocs serve
 ```
 
-预览地址默认为 `http://127.0.0.1:8000/`。
+预览地址为 `http://127.0.0.1:8000/docs/`。
 
 ## 构建
 
@@ -35,4 +35,10 @@ mkdocs build --strict
 
 目标地址是 `https://zerothrobot.github.io/docs/`。为使用 GitHub Pages 项目站点的默认路径，GitHub 上的文档仓库必须命名为 `docs`（本地工作目录仍可命名为 `zerothrobot-docs`）。将仓库 Pages 发布源设置为 **GitHub Actions**：Pull Request 自动构建和检查；合并到 `main` 后自动发布。
 
-本地 `origin` 也应指向 `https://github.com/ZerothRobot/docs.git`。GitHub 远程仓库需要先以 `ZerothRobot/docs` 创建；部署工作流无需额外 PAT 或跨仓库写权限。
+本地 `origin` 指向 `https://github.com/ZerothRobot/docs.git`。创建该远程仓库后，首次推送 `main`：
+
+```bash
+git push -u origin main
+```
+
+然后在仓库 **Settings → Pages → Build and deployment** 中将 Source 设为 **GitHub Actions**。部署工作流无需额外 PAT 或跨仓库写权限。
