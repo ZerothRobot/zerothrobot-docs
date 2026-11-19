@@ -44,14 +44,29 @@ markdown_extensions:
   - footnotes
   - md_in_html
   - pymdownx.details
+  - pymdownx.arithmatex:
+      generic: true
   - pymdownx.highlight:
       anchor_linenums: true
   - pymdownx.inlinehilite
   - pymdownx.keys
   - pymdownx.snippets
-  - pymdownx.superfences
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
   - toc:
       permalink: true
+
+extra_css:
+  - products/joyin-arm/tutorial/stylesheets/mermaid.css
+  - products/joyin-arm/tutorial/stylesheets/extra.css
+
+extra_javascript:
+  - products/joyin-arm/tutorial/javascripts/image-viewer.js
+  - products/joyin-arm/tutorial/javascripts/mathjax.js
+  - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
 
 nav:
   - 文档首页: index.md
@@ -65,7 +80,31 @@ nav:
           - 产品概览: products/roborigo/index.md
       - Joyin Arm:
           - 产品概览: products/joyin-arm/index.md
-          - 机械臂部门教程: https://joyin-dexhand.github.io/joyin_arm_tutorial/
+          - 机械臂教程:
+              - 教程首页: products/joyin-arm/tutorial/index.md
+              - 使用篇:
+                  - 快速上手: products/joyin-arm/tutorial/quick_start.md
+                  - 关节电机: products/joyin-arm/tutorial/motor.md
+                  - 机械臂整臂: products/joyin-arm/tutorial/arm.md
+                  - 末端执行器: products/joyin-arm/tutorial/end.md
+              - 基础篇:
+                  - 第一章 机器人与机械臂初识: products/joyin-arm/tutorial/chapt1_intro.md
+                  - 第二章 空间位姿与位置正运动学: products/joyin-arm/tutorial/chapt2_fkine.md
+                  - 第三章 位置逆运动学: products/joyin-arm/tutorial/chapt3_ikine.md
+                  - 第四章 速度运动学与静力学: products/joyin-arm/tutorial/chapt4_jacobian.md
+                  - 第五章 轨迹生成: products/joyin-arm/tutorial/chapt5_trajectory.md
+                  - 第六章 运动控制: products/joyin-arm/tutorial/chapt6_control.md
+              - 进阶篇:
+                  - 第七章 构型结构设计与URDF导出: products/joyin-arm/tutorial/chapt7_urdf.md
+                  - 第八章 动力学及控制: products/joyin-arm/tutorial/chapt8_dyn.md
+                  - 第九章 力控制: products/joyin-arm/tutorial/chapt9_force.md
+                  - 第十章 ROS2: products/joyin-arm/tutorial/chapt10_ros2.md
+              - 应用篇:
+                  - 第十一章 状态监测与安全软防护: products/joyin-arm/tutorial/chapt11_safety.md
+                  - 第十二章 示教和遥操作: products/joyin-arm/tutorial/chapt12_teleop.md
+                  - 第十三章 末端执行器: products/joyin-arm/tutorial/chapt13_endeffector.md
+                  - 第十四章 用户接口: products/joyin-arm/tutorial/chapt14_ui.md
+                  - 第十五章 JoyArm 综合实践项目: products/joyin-arm/tutorial/chapt15_project.md
   - 通用指南:
       - 使用前须知: guides/index.md
       - 安全与维护: guides/safety.md

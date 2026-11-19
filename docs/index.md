@@ -9,7 +9,7 @@
 | M1 | [M1 产品文档](products/m1/index.md) | 框架已建立，产品资料待补充 |
 | Bridge | [Bridge 产品文档](products/bridge/index.md) | 框架已建立，产品资料待补充 |
 | Roborigo | [Roborigo 产品文档](products/roborigo/index.md) | 框架已建立，产品资料待补充 |
-| Joyin Arm | [Joyin Arm 产品文档](products/joyin-arm/index.md) | 提供部门现有教程入口 |
+| Joyin Arm | [Joyin Arm 产品文档](products/joyin-arm/index.md) | 已收录机械臂教程 |
 
 ## 通用资料
 
