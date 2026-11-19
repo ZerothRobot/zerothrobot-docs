@@ -63,9 +63,9 @@ markdown_extensions:
       permalink: false
 
 extra_css:
-  - stylesheets/site.css
   - products/joyin-arm/tutorial/stylesheets/mermaid.css
   - products/joyin-arm/tutorial/stylesheets/extra.css
+  - stylesheets/site.css
 
 extra_javascript:
   - products/joyin-arm/tutorial/javascripts/image-viewer.js
