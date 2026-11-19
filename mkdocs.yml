@@ -2,11 +2,14 @@ site_name: ZerothRobot 文档中心
 site_description: ZerothRobot 产品、使用与开发文档
 site_url: https://zerothrobot.github.io/docs/
 repo_url: https://github.com/ZerothRobot/zerothrobot-docs
-repo_name: ZerothRobot/zerothrobot-docs
+repo_name: ZerothRobot
 edit_uri: edit/main/docs/
 
 theme:
   name: material
+  favicon: images/zeroth-logo.png
+  icon:
+    repo: fontawesome/brands/github
   language: zh
   features:
     - navigation.instant
@@ -20,15 +23,15 @@ theme:
   palette:
     - scheme: default
       primary: teal
-      accent: amber
+      accent: teal
       toggle:
-        icon: material/brightness-7
+        icon: material/weather-sunny
         name: 切换到深色模式
     - scheme: slate
       primary: teal
-      accent: amber
+      accent: teal
       toggle:
-        icon: material/brightness-4
+        icon: material/weather-night
         name: 切换到浅色模式
 
 plugins:
@@ -57,9 +60,10 @@ markdown_extensions:
           class: mermaid
           format: !!python/name:pymdownx.superfences.fence_code_format
   - toc:
-      permalink: true
+      permalink: false
 
 extra_css:
+  - stylesheets/site.css
   - products/joyin-arm/tutorial/stylesheets/mermaid.css
   - products/joyin-arm/tutorial/stylesheets/extra.css
 
