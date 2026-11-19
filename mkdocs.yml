@@ -1,3 +1,6 @@
+hooks:
+  - hooks/i18n_assets.py
+
 site_name: ZerothRobot 文档中心
 site_description: ZerothRobot 产品、使用与开发文档
 site_url: https://zerothrobot.github.io/docs/
@@ -7,12 +10,12 @@ edit_uri: edit/main/docs/
 
 theme:
   name: material
-  favicon: images/zeroth-logo.png
+  favicon: assets/images/zeroth-logo.png
   icon:
     repo: fontawesome/brands/github
+    alternate: material/web
   language: zh
   features:
-    - navigation.instant
     - navigation.sections
     - navigation.expand
     - navigation.top
@@ -39,6 +42,70 @@ plugins:
       lang:
         - zh
         - en
+  - i18n:
+      docs_structure: folder
+      reconfigure_material: true
+      reconfigure_search: true
+      fallback_to_default: true
+      languages:
+        - locale: zh
+          name: 中文
+          default: true
+        - locale: en
+          name: English
+          site_name: ZerothRobot Documentation
+          site_description: Product, usage, and development documentation for ZerothRobot
+          theme:
+            palette:
+              - scheme: default
+                primary: teal
+                accent: teal
+                toggle:
+                  icon: material/weather-sunny
+                  name: Switch to dark mode
+              - scheme: slate
+                primary: teal
+                accent: teal
+                toggle:
+                  icon: material/weather-night
+                  name: Switch to light mode
+          nav_translations:
+            文档首页: Home
+            产品总览: Product Overview
+            产品文档: Product Documentation
+            产品概览: Product Overview
+            机械臂教程: Robotic Arm Tutorial
+            教程首页: Tutorial Home
+            使用篇: Usage
+            快速上手: Quick Start
+            关节电机: Joint Motor
+            机械臂整臂: Complete Robotic Arm
+            末端执行器: End Effector
+            基础篇: Basics
+            第一章 机器人与机械臂初识: "Chapter 1: Introduction to Robots and Robotic Arms"
+            第二章 空间位姿与位置正运动学: "Chapter 2: Spatial Poses and Forward Position Kinematics"
+            第三章 位置逆运动学: "Chapter 3: Inverse Position Kinematics"
+            第四章 速度运动学与静力学: "Chapter 4: Velocity Kinematics and Statics"
+            第五章 轨迹生成: "Chapter 5: Trajectory Generation"
+            第六章 运动控制: "Chapter 6: Motion Control"
+            进阶篇: Advanced
+            第七章 构型结构设计与URDF导出: "Chapter 7: Configuration Design and URDF Export"
+            第八章 动力学及控制: "Chapter 8: Dynamics and Control"
+            第九章 力控制: "Chapter 9: Force Control"
+            第十章 ROS2: "Chapter 10: ROS 2"
+            应用篇: Applications
+            第十一章 状态监测与安全软防护: "Chapter 11: State Monitoring and Safety Protection"
+            第十二章 示教和遥操作: "Chapter 12: Teaching and Teleoperation"
+            第十三章 末端执行器: "Chapter 13: End Effectors"
+            第十四章 用户接口: "Chapter 14: User Interfaces"
+            第十五章 JoyArm 综合实践项目: "Chapter 15: JoyArm Integrated Project"
+            通用指南: General Guides
+            使用前须知: Before You Begin
+            安全与维护: Safety and Maintenance
+            常见问题: FAQ
+            参与文档维护: Contributing
+            文档贡献指南: Documentation Guide
+            新增产品分类: Adding a Product Category
 
 markdown_extensions:
   - admonition
@@ -63,13 +130,13 @@ markdown_extensions:
       permalink: false
 
 extra_css:
-  - products/joyin-arm/tutorial/stylesheets/mermaid.css
-  - products/joyin-arm/tutorial/stylesheets/extra.css
-  - stylesheets/site.css
+  - assets/joyin-arm/tutorial/stylesheets/mermaid.css
+  - assets/joyin-arm/tutorial/stylesheets/extra.css
+  - assets/stylesheets/site.css
 
 extra_javascript:
-  - products/joyin-arm/tutorial/javascripts/image-viewer.js
-  - products/joyin-arm/tutorial/javascripts/mathjax.js
+  - assets/joyin-arm/tutorial/javascripts/image-viewer.js
+  - assets/joyin-arm/tutorial/javascripts/mathjax.js
   - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
 
 nav:
