@@ -99,13 +99,8 @@ plugins:
             第十三章 末端执行器: "Chapter 13: End Effectors"
             第十四章 用户接口: "Chapter 14: User Interfaces"
             第十五章 JoyArm 综合实践项目: "Chapter 15: JoyArm Integrated Project"
-            通用指南: General Guides
-            使用前须知: Before You Begin
-            安全与维护: Safety and Maintenance
             常见问题: FAQ
             参与文档维护: Contributing
-            文档贡献指南: Documentation Guide
-            新增产品分类: Adding a Product Category
 
 markdown_extensions:
   - admonition
@@ -176,13 +171,8 @@ nav:
                   - 第十三章 末端执行器: products/joyin-arm/tutorial/chapt13_endeffector.md
                   - 第十四章 用户接口: products/joyin-arm/tutorial/chapt14_ui.md
                   - 第十五章 JoyArm 综合实践项目: products/joyin-arm/tutorial/chapt15_project.md
-  - 通用指南:
-      - 使用前须知: guides/index.md
-      - 安全与维护: guides/safety.md
   - 常见问题: faq.md
-  - 参与文档维护:
-      - 文档贡献指南: contributing/index.md
-      - 新增产品分类: contributing/new-product.md
+  - 参与文档维护: contributing/index.md
 
 strict: true
 validation:

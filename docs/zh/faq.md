@@ -10,4 +10,4 @@
 
 ## 如何新增产品文档？
 
-按[新增产品分类指南](contributing/new-product.md)创建产品目录、编写入口页，并更新 `mkdocs.yml` 导航。
+按[文档贡献指南](contributing/index.md)创建产品目录、编写入口页，并更新 `mkdocs.yml` 导航。

@@ -9,14 +9,27 @@
 - 操作步骤应包含前置条件、执行步骤、预期结果和失败时的检查方式。
 - 中文页面放在 `docs/zh`，英文页面放在 `docs/en`；两种语言保持相同的目录和文件名，并在 `mkdocs.yml` 中登记导航与英文标题。
 - 图片、样式表和脚本等共享资源放在 `docs/assets`，页面中使用相对路径引用；并为图片提供说明文字。
-- 新产品按照[新增产品分类指南](new-product.md)创建目录和导航项。
+
+
+## 新增产品文档
+
+仅为已有真实资料的产品建立文档，不要用推测内容填充空页面。新增产品时，依次完成以下工作：
+
+1. 使用稳定、简短的英文 `product-id`，在 `docs/zh/products/` 和 `docs/en/products/` 下建立同名目录。
+2. 编写中英文产品入口页，说明产品范围、适用型号和版本，以及维护团队。
+3. 根据已验证的资料增加快速开始、操作、开发或排障页面。两种语言的页面使用相同文件名。
+4. 在 `mkdocs.yml` 的产品导航中登记页面，并在英文 `nav_translations` 中登记对应标题。
+5. 在中英文产品总览和首页更新产品入口。
+6. 检查两种语言的页面覆盖和链接，再通过 Pull Request 提交。
+
+图片、样式表和脚本等共享资源放在 `docs/assets/`，不要在语言目录中复制一份。
 
 ## 本地检查
 
 ```bash
-python -m pip install -r requirements.txt
-python scripts/check_translations.py
-mkdocs build --strict
+.venv/bin/python -m pip install -r requirements.txt
+.venv/bin/python scripts/check_translations.py
+.venv/bin/python -m mkdocs build --strict
 ```
 
 覆盖检查会确认中英文页面一一对应，构建命令会同时生成中文和英文站点。Pull Request 会自动运行相同的严格构建检查。合并到 `main` 后，工作流会发布站点。

@@ -1,6 +1,6 @@
 # ZerothRobot 文档中心
 
-本网站集中整理 ZerothRobot 各产品的使用与开发资料。产品文档按产品型号独立归档，通用指南和维护规范单独管理。
+本网站集中整理 ZerothRobot 各产品的使用与开发资料，产品文档按型号分类维护。
 
 ## 产品
 
@@ -11,11 +11,9 @@
 | Roborigo | [Roborigo 产品文档](products/roborigo/index.md) | 框架已建立，产品资料待补充 |
 | Joyin Arm | [Joyin Arm 产品文档](products/joyin-arm/index.md) | 已收录机械臂教程 |
 
-## 通用资料
+## 常见问题
 
-- [使用前须知](guides/index.md)：文档适用范围、版本标注和常见使用准备。
-- [安全与维护](guides/safety.md)：跨产品的通用安全原则和维护记录建议。
-- [常见问题](faq.md)：跨产品常见问题入口。
+查看[常见问题](faq.md)，了解跨产品的常见问题与反馈信息。
 
 ## 文档更新
 

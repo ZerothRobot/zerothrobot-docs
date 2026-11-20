@@ -53,13 +53,11 @@ docs/
 │   ├── index.md
 │   ├── faq.md
 │   ├── contributing/
-│   ├── guides/
 │   └── products/
 └── en/                      # 英文内容（发布在 /en/ 路径）
     ├── index.md
     ├── faq.md
     ├── contributing/
-    ├── guides/
     └── products/
 hooks/
 └── i18n_assets.py           # 构建时修正英文页面的共享资源路径

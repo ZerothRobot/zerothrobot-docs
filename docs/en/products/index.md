@@ -9,4 +9,4 @@ Product documentation is maintained in sections by model. After entering a speci
 | Roborigo | [Roborigo](roborigo/index.md) | Product overview, version compatibility, quick start, operation, maintenance, and troubleshooting |
 | Joyin Arm | [Joyin Arm](joyin-arm/index.md) | Product overview, plus the existing tutorials from the robotic arm department |
 
-When adding a product, follow the [guide for adding a product category](../contributing/new-product.md) to create the directory and register the navigation.
+When adding a product, follow the [documentation contribution guide](../contributing/index.md) to create the directory and register the navigation.

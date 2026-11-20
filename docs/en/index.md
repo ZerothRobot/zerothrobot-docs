@@ -1,6 +1,6 @@
 # ZerothRobot Documentation Center
 
-This site brings together the usage and development material for each ZerothRobot product. Product documentation is archived separately by product model, while general guides and maintenance standards are managed separately.
+This site brings together usage and development material for ZerothRobot products, organized by model.
 
 ## Products
 
@@ -11,11 +11,9 @@ This site brings together the usage and development material for each ZerothRobo
 | Roborigo | [Roborigo product documentation](products/roborigo/index.md) | Framework established, product material to be added |
 | Joyin Arm | [Joyin Arm product documentation](products/joyin-arm/index.md) | Robotic arm tutorial included |
 
-## General material
+## Frequently asked questions
 
-- [Before you begin](guides/index.md): documentation scope, version labeling, and common preparation.
-- [Safety and maintenance](guides/safety.md): cross-product general safety principles and maintenance record recommendations.
-- [FAQ](faq.md): entry point for cross-product frequently asked questions.
+See the [FAQ](faq.md) for common questions and the information needed when reporting an issue.
 
 ## Documentation updates
 

@@ -10,4 +10,4 @@ Provide the product model and version, the host computer and runtime environment
 
 ## How do I add product documentation?
 
-Follow the [guide for adding a product category](contributing/new-product.md) to create the product directory and write the entry page, and update the `mkdocs.yml` navigation.
+Follow the [documentation contribution guide](contributing/index.md) to create the product directory and write the entry page, and update the `mkdocs.yml` navigation.
