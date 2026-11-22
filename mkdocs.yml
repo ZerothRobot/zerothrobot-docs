@@ -18,6 +18,7 @@ theme:
   features:
     - navigation.sections
     - navigation.expand
+    - navigation.indexes
     - navigation.top
     - search.highlight
     - search.suggest
@@ -130,22 +131,23 @@ extra_css:
   - assets/stylesheets/site.css
 
 extra_javascript:
+  - assets/javascripts/site.js
   - assets/joyin-arm/tutorial/javascripts/image-viewer.js
   - assets/joyin-arm/tutorial/javascripts/mathjax.js
   - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
 
 nav:
   - 文档首页: index.md
-  - 产品总览: products/index.md
   - 产品文档:
+      - products/index.md
       - M1:
-          - 产品概览: products/m1/index.md
+          - products/m1/index.md
       - Bridge:
-          - 产品概览: products/bridge/index.md
+          - products/bridge/index.md
       - Roborigo:
-          - 产品概览: products/roborigo/index.md
+          - products/roborigo/index.md
       - Joyin Arm:
-          - 产品概览: products/joyin-arm/index.md
+          - products/joyin-arm/index.md
           - 机械臂教程:
               - 教程首页: products/joyin-arm/tutorial/index.md
               - 使用篇:

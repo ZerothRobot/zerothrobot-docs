@@ -97,50 +97,39 @@ body[data-md-color-scheme="slate"] {
   }
 }
 
-/* 中等宽度优先保留左侧主目录，右侧目录先让出空间。 */
-@media screen and (min-width: 960px) and (max-width: 1219px) {
-  /* Material 默认会把主目录移出视口并作为抽屉打开。中等宽度下保留左侧目录列。 */
+/* 中等宽度固定左侧导航，空间充足后再显示右侧页内目录。 */
+@media screen and (min-width: 60em) and (max-width: 76.1875em) {
   .md-sidebar--primary {
-    display: block !important;
-    position: static !important;
-    inset: auto !important;
-    left: auto !important;
-    right: auto !important;
-    flex: 0 0 15rem !important;
-    width: 15rem !important;
-    min-width: 15rem !important;
-    height: auto !important;
-    padding: 1.2rem 0;
-    background: var(--md-default-bg-color);
+    position: sticky;
+    top: 2.4rem;
+    flex: 0 0 15rem;
+    width: 15rem;
+    min-width: 15rem;
+    height: calc(100vh - 2.4rem);
     transform: none !important;
-    box-shadow: none !important;
-    z-index: auto;
+    transition: none !important;
+    box-shadow: none;
   }
 
   .md-sidebar--primary .md-sidebar__scrollwrap {
-    position: static !important;
-    inset: auto !important;
-    max-height: none;
+    position: relative;
+    inset: auto;
+    height: 100%;
+    max-height: calc(100vh - 4.8rem);
     margin: 0 0.2rem;
-    overflow: visible !important;
-  }
-
-  .md-sidebar--primary .md-nav--primary {
-    position: static;
-    display: block;
-    height: auto;
-  }
-
-  .md-sidebar--primary .md-nav--primary > .md-nav__title {
-    position: static;
-    height: auto;
-    padding: 0.2rem 0.8rem 0.7rem;
-    background: transparent;
-    line-height: 1.5;
+    overflow-y: auto;
   }
 
   .md-sidebar--secondary {
     display: none !important;
+  }
+
+  .md-header__button.md-logo {
+    display: block;
+  }
+
+  .md-header__button[for="__drawer"] {
+    display: none;
   }
 
   [data-md-toggle="drawer"]:checked ~ .md-overlay {
@@ -148,20 +137,157 @@ body[data-md-color-scheme="slate"] {
   }
 }
 
+/* 左侧目录始终沿用全屏目录的树形结构，宽度断点只处理侧栏布局。 */
+.md-sidebar--primary .md-sidebar__scrollwrap {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.md-sidebar--primary .md-nav--primary,
+.md-sidebar--primary .md-nav--primary .md-nav {
+  position: static !important;
+  inset: auto !important;
+  display: block !important;
+  width: auto !important;
+  height: auto !important;
+  min-height: 0;
+  margin-block: 0 !important;
+  background: transparent;
+  opacity: 1 !important;
+  overflow: visible !important;
+  transform: none !important;
+  visibility: visible !important;
+  z-index: auto;
+}
+
+.md-sidebar--primary .md-nav--primary .md-nav__title {
+  position: static;
+  display: block;
+  height: auto;
+  min-height: 0;
+  padding: 0.8rem 0.8rem 0.7rem;
+  background: transparent;
+  color: var(--md-default-fg-color);
+  font-size: 0.78rem;
+  line-height: 1.5;
+  white-space: normal;
+}
+
+.md-sidebar--primary .md-nav--primary .md-nav__title .md-logo,
+.md-sidebar--primary .md-nav__item--nested > .md-nav > .md-nav__title {
+  display: none;
+}
+
+.md-sidebar--primary .md-nav--primary .md-nav__item {
+  flex: none;
+  margin: 0 !important;
+  border: 0 !important;
+  font-size: 0.78rem;
+  line-height: 1.55;
+}
+
+.md-sidebar--primary .md-nav--primary .md-nav__list {
+  display: block;
+  flex: none;
+  padding: 0 0 0 0.75rem !important;
+  overflow: visible !important;
+  box-shadow: none !important;
+  scroll-snap-type: none;
+}
+
+.md-sidebar--primary .md-nav__item--section {
+  display: block;
+  margin: 0;
+}
+
+[dir="ltr"] .md-sidebar--primary .md-nav__item--section > .md-nav {
+  margin-left: -0.6rem !important;
+}
+
+[dir="rtl"] .md-sidebar--primary .md-nav__item--section > .md-nav {
+  margin-right: -0.6rem !important;
+}
+
+.md-sidebar--primary .md-nav__item--section > .md-nav > .md-nav__list > .md-nav__item {
+  padding: 0;
+}
+
+.md-sidebar--primary .md-nav__item--nested > .md-nav__toggle:not(:checked) ~ .md-nav {
+  display: none !important;
+}
+
+.md-sidebar--primary .md-nav__item--nested > .md-nav__toggle:checked ~ .md-nav {
+  display: block !important;
+}
+
+.md-sidebar--primary .md-nav__toggle ~ .md-nav__link {
+  pointer-events: auto !important;
+}
+
+.md-sidebar--primary .md-nav__toggle ~ .md-nav__link .md-nav__icon::after {
+  transform: rotate(0deg);
+  transition: transform 140ms ease;
+}
+
+.md-sidebar--primary .md-nav__toggle:checked ~ .md-nav__link .md-nav__icon::after {
+  transform: rotate(90deg);
+}
+
+.md-sidebar--primary .md-nav--primary .md-nav__link {
+  margin: 0 !important;
+  padding: 0.4rem 1.8rem 0.4rem 0.8rem !important;
+  font-size: 0.78rem;
+  line-height: 1.55;
+}
+
+.md-sidebar--primary .md-nav__item > label.md-nav__link[for="__toc"] {
+  display: none !important;
+}
+
+.md-sidebar--primary .md-nav--primary .md-nav__link[for="__toc"] ~ .md-nav {
+  display: none !important;
+}
+
 .md-sidebar--primary .md-sidebar__inner {
   padding-right: 0;
 }
+
+/* 侧栏沿用现有目录，仅隐藏仓库入口行。 */
+.md-sidebar--primary .md-nav__source {
+  display: none;
+}
+
+.md-sidebar--primary .md-sidebar__scrollwrap,
+.md-sidebar--secondary .md-sidebar__scrollwrap {
+  scrollbar-width: none;
+}
+
+.md-sidebar--primary .md-sidebar__scrollwrap::-webkit-scrollbar,
+.md-sidebar--secondary .md-sidebar__scrollwrap::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
 
 .md-sidebar {
   background: var(--md-default-bg-color);
 }
 
-.md-sidebar--primary {
-  border-right: 1px solid rgb(28 28 26 / 10%);
+.md-sidebar--primary,
+.md-sidebar--secondary {
+  border: 0;
+  box-shadow: none !important;
 }
 
-.md-sidebar--secondary {
-  border-left: 1px solid rgb(28 28 26 / 10%);
+.md-sidebar--primary .md-nav__title,
+.md-sidebar--secondary .md-nav__title,
+.md-sidebar--primary .md-nav__list,
+.md-sidebar--secondary .md-nav__list {
+  box-shadow: none !important;
+}
+
+.md-sidebar--primary .md-nav__item {
+  border-top: 0 !important;
 }
 
 .md-nav__title {
@@ -194,6 +320,7 @@ body[data-md-color-scheme="slate"] {
   position: relative;
   display: flex;
   width: 100%;
+  pointer-events: auto;
   box-sizing: border-box;
   align-items: center;
   padding-right: 1.35rem;
@@ -214,8 +341,55 @@ body[data-md-color-scheme="slate"] {
   pointer-events: none;
   place-items: center;
   border-radius: 50%;
-  color: var(--md-default-fg-color--lighter);
-  transition: color 140ms ease, background-color 140ms ease;
+  color: var(--md-default-fg-color--light);
+  opacity: 0.8;
+  transition: color 140ms ease, background-color 140ms ease, opacity 140ms ease;
+}
+
+/* 有首页的分组将标题链接与展开按钮分开，避免两个操作区互相遮挡。 */
+.md-nav--primary .md-nav__container.md-nav__link {
+  display: flex;
+  width: 100%;
+  box-sizing: border-box;
+  align-items: stretch;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.md-nav--primary .md-nav__container > a.md-nav__link {
+  flex: 1 1 auto;
+  min-width: 0;
+  margin: 0 !important;
+  padding: 0.4rem 0.8rem !important;
+}
+
+.md-nav--primary .md-nav__container > label.md-nav__link {
+  position: static;
+  display: grid;
+  flex: 0 0 2.5rem;
+  width: 2.5rem;
+  max-width: 2.5rem;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
+  margin: 0 !important;
+  padding: 0.4rem 0 !important;
+}
+
+.md-nav--primary .md-nav__container > label.md-nav__link .md-nav__icon {
+  position: static;
+  right: auto;
+  margin: 0 !important;
+}
+
+.md-nav--primary .md-nav__container > label.md-nav__link .md-nav__icon::after {
+  transform: rotate(0deg);
+  transition: transform 140ms ease;
+}
+
+.md-nav--primary .md-nav__toggle:checked ~ .md-nav__container > label.md-nav__link .md-nav__icon::after,
+.md-sidebar--primary .md-nav__toggle:checked ~ .md-nav__container > label.md-nav__link .md-nav__icon::after {
+  transform: rotate(90deg);
 }
 
 .md-nav--primary label.md-nav__link:hover .md-nav__icon,
@@ -224,24 +398,9 @@ body[data-md-color-scheme="slate"] {
   background: color-mix(in srgb, var(--md-accent-fg-color) 10%, transparent);
 }
 
-.md-nav--primary > .md-nav__list > .md-nav__item--nested > label.md-nav__link .md-nav__icon {
-  display: none;
-}
-
-.md-nav--secondary .md-nav__link {
-  border-left: 1px solid transparent;
-}
-
+.md-nav--secondary .md-nav__link,
 .md-nav--secondary .md-nav__link--active {
-  border-left-color: var(--md-accent-fg-color);
-}
-
-[data-md-color-scheme="slate"] .md-sidebar--primary {
-  border-right-color: rgb(255 255 255 / 10%);
-}
-
-[data-md-color-scheme="slate"] .md-sidebar--secondary {
-  border-left-color: rgb(255 255 255 / 10%);
+  border-left: 0;
 }
 
 /* ---------- 正文排版 ---------- */
@@ -272,7 +431,7 @@ body[data-md-color-scheme="slate"] {
 }
 
 .md-typeset h1 {
-  margin-bottom: 1.35rem;
+  margin-block: 0 1.35rem;
   font-size: 36px;
   line-height: 1.22;
 }
@@ -384,15 +543,6 @@ body[data-md-color-scheme="slate"] {
   .md-typeset h2 {
     margin-top: 2.2rem;
   }
-}
-
-@media screen and (max-width: 44.9375em) {
-
-  .md-nav--primary .md-nav__link,
-  .md-nav--primary .md-nav__title {
-    font-size: 0.8rem;
-  }
-
 }
 
 /* ---------- 顶部栏控件顺序与间距 ---------- */
