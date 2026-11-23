@@ -10,4 +10,4 @@
 
 ## 如何新增产品文档？
 
-按[文档贡献指南](contributing/index.md)创建产品目录、编写入口页，并更新 `mkdocs.yml` 导航。
+准备好经确认的产品资料后，在 `docs/zh/products/` 和 `docs/en/products/` 下创建路径对应的页面，在 `mkdocs.yml` 登记导航与英文标题，并更新中英文产品总览。共享资源放在 `docs/assets/`，提交前运行页面覆盖检查和严格构建。

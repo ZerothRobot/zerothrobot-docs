@@ -635,6 +635,10 @@ body[data-md-color-scheme="slate"] {
   display: none;
 }
 
+/* Center the theme attribution in the footer. */
+.md-footer-meta__inner {
+  justify-content: center;
+}
 
 /* ---------- 表格阅读尺寸 ---------- */
 .md-typeset table:not([class]) {

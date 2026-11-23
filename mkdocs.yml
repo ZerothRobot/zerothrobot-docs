@@ -101,7 +101,6 @@ plugins:
             第十四章 用户接口: "Chapter 14: User Interfaces"
             第十五章 JoyArm 综合实践项目: "Chapter 15: JoyArm Integrated Project"
             常见问题: FAQ
-            参与文档维护: Contributing
 
 markdown_extensions:
   - admonition
@@ -174,7 +173,6 @@ nav:
                   - 第十四章 用户接口: products/joyin-arm/tutorial/chapt14_ui.md
                   - 第十五章 JoyArm 综合实践项目: products/joyin-arm/tutorial/chapt15_project.md
   - 常见问题: faq.md
-  - 参与文档维护: contributing/index.md
 
 strict: true
 validation:

@@ -9,4 +9,4 @@
 | Roborigo | [Roborigo](roborigo/index.md) | 产品概览、版本兼容、快速开始、操作、维护和排障 |
 | Joyin Arm | [Joyin Arm](joyin-arm/index.md) | 产品概览，以及机械臂部门现有教程 |
 
-新增产品时，按[文档贡献指南](../contributing/index.md)建立目录并登记导航。
+新增产品文档须基于已确认的产品资料，并遵循中英文页面路径一致、资源统一存放和导航登记等仓库约定。

@@ -10,4 +10,4 @@ Provide the product model and version, the host computer and runtime environment
 
 ## How do I add product documentation?
 
-Follow the [documentation contribution guide](contributing/index.md) to create the product directory and write the entry page, and update the `mkdocs.yml` navigation.
+After the product material is verified, create matching pages under `docs/zh/products/` and `docs/en/products/`, register the navigation and English titles in `mkdocs.yml`, and update both product overviews. Keep shared assets in `docs/assets/`, then run the page-coverage check and strict build before submitting.
